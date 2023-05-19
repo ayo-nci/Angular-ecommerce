@@ -25,3 +25,18 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Custom Help
+- Generate new application with `ng new [app name]`
+- Use cli to create components as it registers it and generates files
+
+### Services
+- Services are used to seperate component logic from component class(which deals with component presentation). Allows for unit testing too since we can mock http endpoints. 
+#### How to use
+- Create [component name].service.ts file for your component
+- Add logic to get data from some service or add mock data
+- Add dependency injection in app.module.ts > provider
+- Use in constructor like ` constructor (service: CoursesService) {
+        this.courses = service.getCourses();
+    }`
+- Use `ng g s [service name]` to use cli to generate service 
